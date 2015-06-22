@@ -28,33 +28,33 @@ namespace ConsoleApplication1
             SistemaBudjet entry = new SistemaBudjet(date, name, price);
         }
 
-        //private static double GetExpenses(int option)
-        //{
-        //    List<SistemaBudjet> lastWeek = FileMethods.ReadFromFile(Filename, 7);
-        //    double result = 0;
-        //    foreach (SistemaBudjet item in lastWeek)
-        //    {
-        //        result += item.Price;
-        //    }
-        //    return result;
+        private static double GetExpenses(int option)
+        {
+            List<SistemaBudjet> lastWeek = FileMethods.ReadFile(Filename, 7);
+            double result = 0;
+            foreach (SistemaBudjet item in lastWeek)
+            {
+                result += item.Price;
+            }
+            return result;
 
-        //}
+        }
 
-        //public static double LastWeekExpenses()
-        //{
-        //    double result = GetExpenses(7);
-        //    return result;
-        //}
-        //public static double LastMonthExpenses()
-        //{
-        //    double result = GetExpenses(30);
-        //    return result;
-        //}
-        //public static double LastYearExpenses()
-        //{
-        //    double result = GetExpenses(365);
-        //    return result;
-        //}
+        public static double LastWeekExpenses()
+        {
+            double result = GetExpenses(7);
+            return result;
+        }
+        public static double LastMonthExpenses()
+        {
+            double result = GetExpenses(30);
+            return result;
+        }
+        public static double LastYearExpenses()
+        {
+            double result = GetExpenses(365);
+            return result;
+        }
 
         public static void Export()
         {
