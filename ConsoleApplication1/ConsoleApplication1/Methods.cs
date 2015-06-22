@@ -14,8 +14,8 @@ namespace ConsoleApplication1
     }
     class Methods
     {
-        private static List<SistemaBudjet> list;
-        private static string filename = string.Empty;
+        private static List<SistemaBudjet> list = new List<SistemaBudjet>();
+        private static string filename = "temp.txt";
 
         public static string Filename
         {
@@ -32,6 +32,8 @@ namespace ConsoleApplication1
             double price = double.Parse(Console.ReadLine());
 
             SistemaBudjet entry = new SistemaBudjet(date, name, price);
+            list.Add(entry);
+            FileMethods.WriteFile(list, Filename, false);
         }
 
         private static double GetExpenses(Options option)
@@ -66,7 +68,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Въведете име на файл за запис: ");
             string filename = Console.ReadLine();
-            FileMethods.WriteFile(list, filename);
+            FileMethods.WriteFile(list, filename, true);
         }
         public static void Import()
         {

@@ -53,15 +53,15 @@ namespace ConsoleApplication1
 
 
 
-        public static void WriteFile(List<SistemaBudjet> list, string fileName)
+        public static void WriteFile(List<SistemaBudjet> list, string fileName, bool append)
         {
-            StreamWriter writer = new StreamWriter(fileName,true);
+            StreamWriter writer = new StreamWriter(fileName, append);
             using (writer)
             { 
                 
                 foreach (var item in list)
                 {
-                    Console.WriteLine(item.ToString());
+                    writer.WriteLine(item.ToString());
                 }
             }
         }

@@ -16,12 +16,12 @@ namespace ConsoleApplication1
             {
                 switch (choice)
                 {
-                    case 1: 
-                    case 2: 
-                    case 3:
-                    case 4:
-                    case 5: 
-                    case 6: 
+                    case 1: Methods.AddRecord(); break;
+                    case 2: Methods.LastWeekExpenses(); break;
+                    case 3: Methods.LastMonthExpenses(); break;
+                    case 4: Methods.LastYearExpenses(); break;
+                    case 5: Methods.Export(); break;
+                    case 6: Methods.Import(); break;
                     case 7: return;
                     default: Console.WriteLine("Моля въведете цифра от 1 до 6!"); break;
 
