@@ -16,7 +16,9 @@ namespace ConsoleApplication1
             List<SistemaBudjet> result = new List<SistemaBudjet>();
             using (readFile)
             {
-                line = readFile.ReadLine();
+                try
+                {
+ line = readFile.ReadLine();
                 while (line != null)
                 {
 
@@ -34,6 +36,16 @@ namespace ConsoleApplication1
 
 
                 }
+                }
+                catch (FileNotFoundException a)
+                {
+
+                    Console.WriteLine(a.Message);
+                }
+                catch (IOException a)
+                {
+                    Console.WriteLine(a.Message);
+                }
             }
             return result;
         }
@@ -44,12 +56,19 @@ namespace ConsoleApplication1
         {
             StreamWriter writer = new StreamWriter(fileName,true);
             using (writer)
-            { 
-                
-                foreach (var item in list)
+            {
+                try
                 {
-                    Console.WriteLine(item.ToString());
+                    foreach (var item in list)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                 }
+                catch (UnauthorizedAccessException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                
                 
             }
              
