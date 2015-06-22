@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     class FileMethods
     {
-        public static List<SistemaBudjet> ReadFromFile(string filename, int days);
+      //  public static List<SistemaBudjet> ReadFromFile(string filename, int days);
 
         internal static void WriteFile(string filename)
         {
