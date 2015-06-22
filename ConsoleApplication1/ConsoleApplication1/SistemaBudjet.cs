@@ -35,5 +35,9 @@ namespace ConsoleApplication1
             this.razhod = razhod;
             this.price = price;
         }
+        public override string ToString()
+        {
+            return string.Format("{0} | {1} | {2}", data, razhod, price);
+        }
     }
 }
