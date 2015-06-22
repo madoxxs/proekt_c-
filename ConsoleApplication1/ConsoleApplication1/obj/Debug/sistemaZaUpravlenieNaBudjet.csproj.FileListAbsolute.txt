@@ -16,4 +16,3 @@ D:\proekt\proekt_c-\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApp
 D:\Obsht Proekt\proekt_c-\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 D:\Obsht Proekt\proekt_c-\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\Obsht Proekt\proekt_c-\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-D:\Obsht Proekt\proekt_c-\ConsoleApplication1\ConsoleApplication1\obj\Debug\sistemaZaUpravlenieNaBudjet.csprojResolveAssemblyReference.cache
