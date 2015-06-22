@@ -8,5 +8,6 @@ namespace ConsoleApplication1
 {
     class FileMetods
     {
+        public static List<SistemaBudjet> ReadFromFile(string filename, int days);
     }
 }
