@@ -48,6 +48,24 @@ namespace ConsoleApplication1
 
 
 
+        public static void WriteFile(List<SistemaBudjet> list, string fileName)
+        {
+            StreamWriter writer = new StreamWriter(fileName,true);
+            using (writer)
+            { 
+                
+                foreach (var item in list)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+                
+            }
+             
+            
+        }
+
+
+
 
 
     }
