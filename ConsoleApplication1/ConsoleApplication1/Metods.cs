@@ -10,6 +10,11 @@ namespace ConsoleApplication1
     {
         private List<SistemaBudjet> list;
         public static void AddRecord();
-        public static void 
+        public static int LastWeekExpenses();
+        public static int LastMonthExpenses();
+        public static int LastYearExpenses();
+
+        public static void Export();
+        public static void Import();
     }
 }
