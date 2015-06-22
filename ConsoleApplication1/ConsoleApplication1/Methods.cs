@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    public enum Options
+    {
+        week,
+        month,
+        year,
+    }
     class Methods
     {
         private static List<SistemaBudjet> list;
@@ -28,11 +34,11 @@ namespace ConsoleApplication1
             SistemaBudjet entry = new SistemaBudjet(date, name, price);
         }
 
-        private static double GetExpenses(int option)
+        private static double GetExpenses(Options option)
         {
-            List<SistemaBudjet> lastWeek = FileMethods.ReadFile(Filename, 7);
+            List<SistemaBudjet> lastweek = FileMethods.ReadFile(filename, option);
             double result = 0;
-            foreach (SistemaBudjet item in lastWeek)
+            foreach (SistemaBudjet item in lastweek)
             {
                 result += item.Price;
             }
@@ -42,17 +48,17 @@ namespace ConsoleApplication1
 
         public static double LastWeekExpenses()
         {
-            double result = GetExpenses(7);
+            double result = GetExpenses(Options.week);
             return result;
         }
         public static double LastMonthExpenses()
         {
-            double result = GetExpenses(30);
+            double result = GetExpenses(Options.month);
             return result;
         }
         public static double LastYearExpenses()
         {
-            double result = GetExpenses(365);
+            double result = GetExpenses(Options.year);
             return result;
         }
 
