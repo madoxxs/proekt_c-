@@ -14,33 +14,38 @@ namespace ConsoleApplication1
             StreamReader readFile = new StreamReader(file);
             string line;
             List<SistemaBudjet> result = new List<SistemaBudjet>();
+
+            DateTime today = DateTime.Now;
+            DateTime daysBefore = today;
+
+            if (option == Options.week)
+            {
+                daysBefore = new DateTime(today.Year, today.Month, today.Day - 7);
+            }
+            else if (option == Options.month)
+            {
+                daysBefore = new DateTime(today.Year, today.Month - 1, today.Day);
+            }
+            else if (option == Options.year)
+            {
+                daysBefore = new DateTime(today.Year - 1, today.Month, today.Day);
+            }
+
             using (readFile)
             {
                 line = readFile.ReadLine();
                 while (line != null)
                 {
 
-                    string[] lineMass = line.Split('|');
-                    DateTime date = DateTime.Parse(lineMass[0]);
-                    double cena = double.Parse(lineMass[2]);
-                    SistemaBudjet temp = new SistemaBudjet(date, lineMass[1], cena);
-                    DateTime today = DateTime.Now;
-                    DateTime daysBefore = new DateTime();
-                    if (option == Options.week)
-                    {
-                        daysBefore = today.Subtract(TimeSpan.FromDays(7));
-                    }
-                    else if (option == Options.month)
-                    {
-                        daysBefore = today.Subtract(TimeSpan.from)
-                    }
+                    string[] splitedLine = line.Split('|');
+                    DateTime date = DateTime.Parse(splitedLine[0]);
+                    double cena = double.Parse(splitedLine[2]);
+                    SistemaBudjet temp = new SistemaBudjet(date, splitedLine[1], cena);
 
-                    if (temp.Data <= dnes && temp.Data >= daysBefore)
+                    if (temp.Data <= today && temp.Data >= daysBefore)
                     {
                         result.Add(temp);
                     }
-
-
                 }
             }
             return result;
@@ -58,15 +63,7 @@ namespace ConsoleApplication1
                 {
                     Console.WriteLine(item.ToString());
                 }
-                
             }
-             
-            
         }
-
-
-
-
-
     }
 }

@@ -66,7 +66,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Въведете име на файл за запис: ");
             string filename = Console.ReadLine();
-            FileMethods.WriteFile(filename);
+            FileMethods.WriteFile(list, filename);
         }
         public static void Import()
         {
